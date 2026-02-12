@@ -14,11 +14,7 @@ export default defineConfig(({ mode }) => {
         '/api': {
           target: env.VITE_API_URL || 'http://localhost:8000',
           changeOrigin: true,
-          allowedHosts: [
-        'frontend2-g0up.onrender.com',
-        '.onrender.com',        // allows all *.onrender.com domains
-        'localhost'
-      ]
+          
         }
       }
     },
