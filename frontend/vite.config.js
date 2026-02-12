@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => {
     preview: {
       host: true,
       port: 4173,
-      allowedHosts: [
+      allowedHosts: true [
         'frontend2-g0up.onrender.com',
         '.onrender.com',        // allows all *.onrender.com domains
         'localhost'
