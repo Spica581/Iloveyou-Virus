@@ -18,9 +18,15 @@ export default defineConfig(({ mode }) => {
       }
     },
 
+    // ← This is the important part for Web Service
     preview: {
       host: true,
       port: 4173,
+      allowedHosts: [
+        'frontend2-g0up.onrender.com',
+        '.onrender.com',        // allows all *.onrender.com domains
+        'localhost'
+      ]
     }
   };
 });
