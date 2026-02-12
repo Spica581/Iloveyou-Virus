@@ -10,7 +10,7 @@ export default function LetterView() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-     fetch(`/api/letters/${id}`)
+    fetch(`/api/letters/${id}`)
       .then(res => res.json())
       .then(data => {
         setLetter(data);
