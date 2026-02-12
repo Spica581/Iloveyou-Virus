@@ -22,7 +22,7 @@ def root():
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://iloveyou-virus-2.onrender.com"],
+    allow_origins=["https://frontend2-g0up.onrender.com"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
