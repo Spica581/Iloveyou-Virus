@@ -7,26 +7,33 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
 
-    // Local development only
     server: {
       host: '0.0.0.0',
       port: process.env.PORT ? parseInt(process.env.PORT) : 5173,
+      
+      // ← Add this to fix the "Blocked request" error
+      allowedHosts: [
+        'frontend2-g0up.onrender.com',
+        '.onrender.com',           // allows all *.onrender.com subdomains
+        'localhost'
+      ],
+
       proxy: {
         '/api': {
-          target: env.VITE_API_URL || 'http://localhost:8000',   // ← Fixed
+          target: env.VITE_API_URL || 'http://localhost:8000',
           changeOrigin: true,
           secure: false,
         }
       }
     },
 
-    // For `vite preview` command
     preview: {
       host: '0.0.0.0',
       port: process.env.PORT ? parseInt(process.env.PORT) : 4173,
-    },
-
-    // Remove this line → it's not a valid Vite option
-    // allowedHosts: ['frontend2-g0up.onrender.com'],
+      allowedHosts: [
+        'frontend2-g0up.onrender.com',
+        '.onrender.com'
+      ]
+    }
   };
 });
