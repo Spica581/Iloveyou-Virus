@@ -11,7 +11,7 @@ export default function LetterViewer() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch(`http://localhost:8000/api/letters/${id}`)
+    fetch(`/api/letters/${id}`)
       .then(res => {
         if (!res.ok) {
           throw new Error(`Request failed with status code ${res.status}`);
