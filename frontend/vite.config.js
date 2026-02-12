@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => {
       host: true,
       port: 4173,
       allowedHosts: true [
-        'https://iloveyou-virus-1.onrender.com',
+        'frontend2-g0up.onrender.com',
         '.onrender.com',        // allows all *.onrender.com domains
         'localhost'
       ]
