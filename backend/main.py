@@ -1,5 +1,6 @@
 # backend/main.py
 import os
+import uvicorn
 from dotenv import load_dotenv
 
 # Load backend/.env regardless of working directory
@@ -15,9 +16,13 @@ from routers import admin, letters, uploads, users
 
 app = FastAPI(title="Love Letter")
 
+@app.get("/")
+def root():
+    return {"status": "API is running"}
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://iloveyou-virus-2.onrender.com"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
