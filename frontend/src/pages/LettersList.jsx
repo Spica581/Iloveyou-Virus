@@ -10,7 +10,7 @@ export default function LettersList() {
     const fetchLetters = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8000/api/letters/admin/all?admin_token=${localStorage.getItem("adminPass")}`
+          `/api/letters/admin/all?admin_token=${localStorage.getItem("adminPass")}`
         );
         setLetters(res.data);
       } catch (err) {

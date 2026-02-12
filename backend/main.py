@@ -16,6 +16,10 @@ from routers import admin, letters, uploads, users
 
 app = FastAPI(title="Love Letter")
 
+@app.get("/")
+def root():
+    return {"status": "API is running"}
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -46,7 +50,3 @@ def debug_env():
     }
 
 app.include_router(debug)
-
-if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8000))
-    uvicorn.run(app, host="0.0.0.0", port=port)

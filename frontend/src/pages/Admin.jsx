@@ -23,7 +23,7 @@ export default function Admin() {
 
   const checkAdmin = async () => {
     try {
-      const res = await fetch(`http://localhost:8000/api/admin/all?password=${encodeURIComponent(adminPass)}`);
+      const res = await fetch(`/api/admin/all?password=${encodeURIComponent(adminPass)}`);
       if (res.ok) {
         const data = await res.json();
         setLetters(data);
@@ -43,7 +43,7 @@ export default function Admin() {
       if (musicFile) {
         const formData = new FormData();
         formData.append('file', musicFile);
-        const upload = await fetch('http://localhost:8000/api/uploads/music', {
+        const upload = await fetch('/api/uploads/music', {
           method: 'POST',
           body: formData
         });
@@ -63,7 +63,7 @@ export default function Admin() {
         tier
       };
 
-      const res = await fetch(`http://localhost:8000/api/admin/create?password=${encodeURIComponent(adminPass)}`, {
+      const res = await fetch(`/api/admin/create?password=${encodeURIComponent(adminPass)}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(letterData)
