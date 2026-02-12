@@ -16,7 +16,7 @@ from routers import admin, letters, uploads, users
 
 app = FastAPI(title="Love Letter")
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 def root():
     return {"status": "API is running"}
 
