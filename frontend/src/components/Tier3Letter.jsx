@@ -257,6 +257,9 @@ export default function Tier3Letter({ letter }) {
 
   if (step === 'letter') {
     const { from_name, to_name, date, content, colors } = letter;
+    
+    // Fallback for to_name if empty/undefined
+    const displayName = to_name && to_name.trim() ? to_name.trim() : 'My Love';
 
     return (
       <div className="min-h-screen relative overflow-hidden" style={{ background: `radial-gradient(circle at center, ${colors.bg} 0%, #fff5f7 70%, ${colors.accent}30 100%)` }}>
@@ -360,7 +363,7 @@ export default function Tier3Letter({ letter }) {
                 animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
                 transition={{ duration: 4, repeat: Infinity }}
               >
-                To My Beloved {to_name}
+                To My Beloved {displayName}
               </motion.h1>
             </div>
 
