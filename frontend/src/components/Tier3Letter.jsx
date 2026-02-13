@@ -604,7 +604,7 @@ export default function Tier3Letter({ letter }) {
             }}
             style={{ backgroundSize: '200% 200%' }}
           >
-            Happy Valentines my handsome boyfriend!!
+            Happy Valentines My Handsome Boyfriend!!
           </motion.h1>
 
           {/* YES button with enhanced effects */}
