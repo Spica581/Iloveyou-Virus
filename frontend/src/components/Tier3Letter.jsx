@@ -357,7 +357,6 @@ export default function Tier3Letter({ letter }) {
                   background: `linear-gradient(45deg, ${colors.accent}, #ff6b9d, ${colors.accent})`,
                   backgroundSize: '200% 200%',
                   WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text'
                 }}
                 animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
